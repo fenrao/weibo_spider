@@ -5,6 +5,8 @@
     
   通过输入微博的url 和用户的Cooike值 来进行爬取，进行简单清洗生成那条微博的转发关系分析图。关系图用的是Echart的引力斥力图，
 节点数据较少时正常，当节点较多时会出现图片动画较卡的情况。
+
+https://github.com/fenrao/weibo_spider/blob/master/example_img/TIM%E6%88%AA%E5%9B%BE20181025170314.png
  
 ### 代理ip
   
