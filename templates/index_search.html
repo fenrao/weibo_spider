@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>微博可视化系统</title>
+     <!-- Bootstrap -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <!-- MetisMenu CSS -->
+        <link href="{%static '/css/metisMenu/metisMenu.min.css'  %}" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="{% static '/css/sb-admin-2.css' %}" rel="stylesheet">
+
+        <!-- Morris Charts CSS -->
+        <link href="{% static '/css/morrisjs/morris.css' %}" rel="stylesheet">
+
+        <!-- Custom Fonts -->
+        <link href="{% static "/css/font-awesome/css/font-awesome.min.css" %}" rel="stylesheet" type="text/css">
+
+
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+<style>
+.col-center-block {
+    float: none;
+    display: block;
+    margin: 0 auto;
+    /* margin-left: auto; margin-right: auto; */
+}
+</style>
+</head>
+<body>
+
+
+    <div class="container">
+    <div class="row">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+
+
+                <div class="login-panel  ">
+					<h1 class="col-sm-offset-3">微博可视化系统</h1>
+                    <div class="panel panel-default">
+					<div class="panel-heading ">
+                        <h2 class="panel-title">输入微博信息：</h2>
+                    </div>
+                    <div class="panel-body">
+                        <form role="form" method="post" action="{% url 'sina:Search' %}" >
+                             {% csrf_token %}
+                            <fieldset>
+                                <div class="form-group">
+									<input type="text" name="cookie" class="form-control" id="intcookie" placeholder="please write your cookie" required=True>
+                                </div>
+                                <div class="form-group">
+									<input type="text" name="url" class="form-control" id="inputurl" placeholder="Weibo URL" required=True>
+                                </div>
+
+                                <!-- Change this to a button or input when using this as a form -->
+								<input type="submit" class="btn btn-lg btn-success btn-block" id="inputurl" placeholder="Weibo URL" >
+
+                            </fieldset>
+                        </form>
+					</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{#    <form method="post" action="{% url 'sina:Search' %}" class="form-inline">#}
+{#      {% csrf_token %}#}
+{#        {{ search_from }}#}
+{#        <input type="submit" value="抓取">#}
+{#    </form>#}
+
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/jquery.js"></script>
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="{%static '/js/metisMenu/metisMenu.min.js' %}"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="{%static '/js/sb-admin-2.js' %}"></script>
+</body>
+</html>
